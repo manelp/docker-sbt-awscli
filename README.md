@@ -11,11 +11,11 @@ and takes inspiration from
 Install [Docker](https://www.docker.com/) and pull the image
 ([mozilla/sbt](https://hub.docker.com/r/mozilla/sbt/) on DockerHub):
 
-    docker pull mozilla/sbt
+    docker pull manelp/docker-sbt-awscli
 
 You can then run `sbt` inside docker to compile code like:
 
-    docker run -it --rm mozilla/sbt sbt shell
+    docker run -it --rm manelp/sbt sbt shell
 
 If you want to execute sbt commands on a project on your local
 filesystem, you may want to mount the current directory and various
@@ -47,10 +47,10 @@ SBT_VERSION=1.3.7
 docker build \
     --build-arg OPENJDK_TAG=$OPENJDK_TAG \
     --build-arg SBT_VERSION=$SBT_VERSION \
-    --tag mozilla/sbt:${OPENJDK_TAG}_${SBT_VERSION} \
-    --tag mozilla/sbt:latest \
+    --tag manelp/sbt:${OPENJDK_TAG}_${SBT_VERSION} \
+    --tag manelp/sbt:latest \
     .
 
-docker push mozilla/sbt:${OPENJDK_TAG}_${SBT_VERSION}
-docker push mozilla/sbt:latest
+docker push manelp/sbt:${OPENJDK_TAG}_${SBT_VERSION}
+docker push manelp/sbt:latest
 ```
