@@ -47,10 +47,10 @@ SBT_VERSION=1.3.7
 docker build \
     --build-arg OPENJDK_TAG=$OPENJDK_TAG \
     --build-arg SBT_VERSION=$SBT_VERSION \
-    --tag manelp/sbt:${OPENJDK_TAG}_${SBT_VERSION} \
-    --tag manelp/sbt:latest \
+    --tag manelp/sbt-docker-awscli:${OPENJDK_TAG}_${SBT_VERSION} \
+    --tag manelp/sbt-docker-awscli:latest \
     .
 
-docker push manelp/sbt:${OPENJDK_TAG}_${SBT_VERSION}
-docker push manelp/sbt:latest
+docker push manelp/sbt-docker-awscli:${OPENJDK_TAG}_${SBT_VERSION}
+docker push manelp/sbt-docker-awscli:latest
 ```
